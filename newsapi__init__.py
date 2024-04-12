@@ -6,7 +6,7 @@ rapi = 'https://newsapi.org/v2/top-headlines?country=in&apiKey={}'.format('be8c1
 local_area = 'greater noida'
 category = 'crime'
 
-req = requests.get(rapi)
+req = requests.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=be8c1b00427341bbb654de6635fae2b8')
 print(req.content)
 # newsapi = NewsApiClient('be8c1b00427341bbb654de6635fae2b8')
 # print()
