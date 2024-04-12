@@ -8,14 +8,14 @@ category = 'crime'
 
 req = requests.get(rapi)
 print(req.content)
-newsapi = NewsApiClient('be8c1b00427341bbb654de6635fae2b8')
-print()
+# newsapi = NewsApiClient('be8c1b00427341bbb654de6635fae2b8')
+# print()
 
 
-top_headlines = newsapi.get_top_headlines(q=local_area,
-                                          category=category,
-                                          language='en',
-                                          country='in')
+# top_headlines = newsapi.get_top_headlines(q=local_area,
+#                                           category=category,
+#                                           language='en',
+#                                           country='in')
 
 
 # all_articles = newsapi.get_everything(q='robery',

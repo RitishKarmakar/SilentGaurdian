@@ -7,3 +7,4 @@ s = HTMLSession()
 r = s.get(url)
 for title in r.html.find('title'):
     print(title.text)
+    
