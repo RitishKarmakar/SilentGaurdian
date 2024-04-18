@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Location Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        function updateLocation() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                var device_id = "unique_device_id"; // You can generate a unique ID for each device
+                
+                // Send location data to server
+                fetch('/update_location', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({device_id: device_id, lat: lat, lng: lng})
+                });
+            });
+        }
+
+        setInterval(updateLocation, 5000); // Update location every 5 seconds
+
+        function updateMarkers() {
+            fetch('/get_locations')
+            .then(response => response.json())
+            .then(data => {
+                for (var device_id in data) {
+                    var marker = L.marker([data[device_id].lat, data[device_id].lng]).addTo(map);
+                    marker.bindPopup('Device ID: ' + device_id);
+                }
+            });
+        }
+
+        setInterval(updateMarkers, 5000); // Update markers every 5 seconds
+    </script>
+</body>
+</html>

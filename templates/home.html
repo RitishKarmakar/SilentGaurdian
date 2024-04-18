@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Portfolio</title>
+
+    <link rel="canonical" href="https://codepen.io/chpecson/pen/vKmbZv">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://www.w3schools.com/lib/w3.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/*Navbar Styles*/
+.w3-navbar { color: #fff; }
+.w3-navbar.w3-animate-top { color: #444; }
+.w3-navbar li a:hover { background-color: rgba(0,0,0,0.2); color: #fff; }
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    opacity: 0.7;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('https://c2.staticflickr.com/6/5208/5308016251_3eaa8dc84d_b.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("https://www.w3schools.com/w3css/img_parallax2.jpg");
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("http://unsplash.com/photos/TV2gg2kZD1o/download");
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+#googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+/* Turn off parallax scrolling for tablets and mobiles */
+@media only screen and (max-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+/* About Section */
+#about {
+  font-size: 1.4em;
+}
+
+/* Heart Icon */
+.heart-icon {
+  color: #f77;
+}
+
+
+/* Clearfix Hack */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+/* Social Media Icons */
+.w3-half > a {
+  text-decoration: none;
+}
+
+i.fa {
+  padding-top: .2em;
+  padding-left: .5em;
+  padding-right: .5em;
+  taransition: color 1s;
+}
+
+.fa-fire:hover {
+  color: #4a4;
+}
+
+.fa-facebook:hover {
+  color: #04a;
+}
+
+.fa-codepen:hover {
+  color: #4af;
+}
+
+#profile { vertical-align: middle; }
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <!-- Author: Christian Pecson -->
+<!-- Date: July 2, 2016 -->
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <ul class="w3-navbar" id="myNavbar">
+    <li><a href="#" class="w3-padding-large">Silent Gaurdian</a></li>
+    <li class="w3-hide-small w3-right">
+      <a href="#contact" class="w3-padding-large">Designs</a>
+    </li>
+    <li class="w3-hide-small w3-right">
+      <a href="#portfolio" class="w3-padding-large">Contribute Women Safety</a>
+    </li>
+    <li class="w3-hide-small w3-right">
+      <a href="#about" class="w3-padding-large">About</a>
+    </li>
+  </ul>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-opacity w3-display-container">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <h1 class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">Silent <span class="w3-hide-small">Gaurdian</span></h1>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h2 class="w3-center">ABOUT SILENT GUARDIAN</h2>
+  <p class="w3-center"><em>Your Seeker</em></p>
+  <p> I am a dreamer whose dream is to build awesome things in the future and to contribute something useful to the world.But hey this website symbolizes that I contribute something in the world.</p>
+  <!--  Profile Picture and Description  -->
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-section">
+      <img src="https://www.dropbox.com/s/mm2bb2xyftqn6am/profile%20%281%29.jpg?raw=1" id="profile" class="w3-circle" alt="Photo of Me">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-section">
+      <p>By the help of FreeCodeCamp I will be a Full Stack Web Developer soon!</p>
+    </div>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container" id="portfolio">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64">
+  <h2 class="w3-center">MY WORK</h2>
+  <p class="w3-center"><em>Here are some of my latest lorem work.<br> Click on the images to make them bigger</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/300?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/301?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/302?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/303?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/304?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/305?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/306?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://unsplash.it/400/307?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" style="max-width:100%">
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container" id="contact">
+  <div class="w3-display-middle">
+    <h2 class="w3-xxlarge w3-text-light-grey w3-wide">CONTACT</h2>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center">WHERE I WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <address class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-round-large"></div>
+    </div>
+    <div class="w3-col m8 w3-container w3-section">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker w3-hover-text-black" style="width:30px"></i> Kabankalan City, NIR, Philippines<br>
+        <i class="fa fa-phone w3-hover-text-black" style="width:30px"></i> Phone: +639 0744 38325<br>
+        <i class="fa fa-envelope w3-hover-text-black" style="width:30px"> </i> Email: christianpecson.io@gmail.com<br>
+      </div>
+      <p>Swing by for a cup of coffee, or leave me a note:</p>
+      <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+        <div class="w3-half">
+          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Name">
+        </div>
+        <div class="w3-half">
+          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Email">
+        </div>
+      </div>
+      <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Comment">
+      <a href="mailto:christianpecson.io@gmail.com" class="w3-btn w3-section w3-right">SEND</a>
+    </div>
+  </address>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-dark-grey w3-padding-48 w3-hover-black cf">
+  <div class="w3-half">
+    <a target="_blank" href="https://www.freecodecamp.com/chpecson">
+      <i class="fa fa-fire fa-2x"></i>
+    </a>
+    <a target="_blank" href="https://www.facebook.com/chpecson">
+      <i class="fa fa-facebook fa-2x"></i>
+    </a>
+    <a target="_blank" href="https://codepen.io/chpecson/">
+      <i class="fa fa-codepen fa-2x"></i>
+    </a>
+  </div>
+  <p class="w3-half">Made with <span class="heart-icon">❤</span> by Christian Pecson and Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p>
+</footer>
+  <script src='https://maps.googleapis.com/maps/api/js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.min.js'></script>
+      <script id="rendered-js" >
+// Smooth Scroll on anchor links
+(function () {
+
+  'use strict';
+
+  // Feature Test
+  if ('querySelector' in document && 'addEventListener' in window && Array.prototype.forEach) {
+
+    // Function to animate the scroll
+    var smoothScroll = function (anchor, duration) {
+
+      // Calculate how far and how fast to scroll
+      var startLocation = window.pageYOffset;
+      var endLocation = anchor.offsetTop;
+      var distance = endLocation - startLocation;
+      var increments = distance / (duration / 16);
+      var stopAnimation;
+
+      // Scroll the page by an increment, and check if it's time to stop
+      var animateScroll = function () {
+        window.scrollBy(0, increments);
+        stopAnimation();
+      };
+
+      // If scrolling down
+      if (increments >= 0) {
+        // Stop animation when you reach the anchor OR the bottom of the page
+        stopAnimation = function () {
+          var travelled = window.pageYOffset;
+          if (travelled >= endLocation - increments || window.innerHeight + travelled >= document.body.offsetHeight) {
+            clearInterval(runAnimation);
+          }
+        };
+      }
+      // If scrolling up
+      else {
+          // Stop animation when you reach the anchor OR the top of the page
+          stopAnimation = function () {
+            var travelled = window.pageYOffset;
+            if (travelled <= (endLocation || 0)) {
+              clearInterval(runAnimation);
+            }
+          };
+        }
+
+      // Loop the animation function
+      var runAnimation = setInterval(animateScroll, 16);
+
+    };
+
+    // Define smooth scroll links
+    var scrollToggle = document.querySelectorAll('.scroll');
+
+    // For each smooth scroll link
+    [].forEach.call(scrollToggle, function (toggle) {
+
+      // When the smooth scroll link is clicked
+      toggle.addEventListener('click', function (e) {
+
+        // Prevent the default link behavior
+        e.preventDefault();
+
+        // Get anchor link and calculate distance from the top
+        var dataID = toggle.getAttribute('href');
+        var dataTarget = document.querySelector(dataID);
+        var dataSpeed = toggle.getAttribute('data-speed');
+
+        // If the anchor exists
+        if (dataTarget) {
+          // Scroll to the anchor
+          smoothScroll(dataTarget, dataSpeed || 500);
+        }
+
+      }, false);
+
+    });
+
+  }
+
+})();
+
+//Smooth Scroll
+SmoothScroll({
+  // Scrolling Core
+  animationTime: 400, // [ms]
+  stepSize: 100, // [px]
+
+  // Acceleration
+  accelerationDelta: 50, // 50
+  accelerationMax: 3, // 3
+
+  // Keyboard Settings
+  keyboardSupport: true, // option
+  arrowScroll: 50, // [px]
+
+  // Pulse (less tweakable)
+  // ratio of "tail" to "acceleration"
+  pulseAlgorithm: true,
+  pulseScale: 4,
+  pulseNormalize: 1,
+
+  // Other
+  touchpadSupport: false, // ignore touchpad by default
+  fixedBackground: true,
+  excluded: '' });
+
+
+// Google Maps
+var myCenter = new google.maps.LatLng(9.9150603, 122.8321918);
+
+function initialize() {
+  var mapProp = {
+    center: myCenter,
+    zoom: 12,
+    scrollwheel: false,
+    draggable: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP };
+
+
+  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+  var marker = new google.maps.Marker({
+    position: myCenter });
+
+
+  marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+
+// Change style of navbar on scroll
+window.onscroll = function () {
+  myFunction();
+};
+
+function myFunction() {
+  var navbar = document.getElementById("myNavbar");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+  } else {
+    navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+  }
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>
